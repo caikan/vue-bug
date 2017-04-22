@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>vue-bug-reproduction</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>vue-bug-reproduction</title>
+</head>
+<body>
+<div>array => [1, 2]</div>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+<div id="app2">
+  <bug title="in *.html: (empty) =>"></bug>
+  <bug title="in *.html: [...array || [], 3, 4] =>" :output="[...array || [], 3, 4]"></bug>
+  <bug title="in *.html: [...(array || []), 3, 4] =>" :output="[...(array || []), 3, 4]"></bug>
+</div>
+</body>
 </html>

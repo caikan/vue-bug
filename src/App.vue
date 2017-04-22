@@ -1,28 +1,18 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+  <div>
+    <bug title="in *.vue: (empty) =>"></bug>
+    <bug title="in *.vue: [...array || [], 3, 4] =>" :output="[...array || [], 3, 4]"></bug>
+    <bug title="in *.vue: [...(array || []), 3, 4] =>" :output="[...(array || []), 3, 4]"></bug>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
-export default {
-  name: 'app',
-  components: {
-    Hello
+  export default {
+    name: 'app',
+    data() {
+      return {
+        array: [1, 2]
+      }
+    }
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
